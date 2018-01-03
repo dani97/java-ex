@@ -8,7 +8,11 @@ public class SquirrelCigars {
 		System.out.println("enter details of party ");
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("enter 1 for weekend else 0");
-		int weekend = sc.nextInt();
+		int weekend=0;
+		try {
+		weekend = sc.nextInt();
+		
+		
 		cigars = sc.nextInt();
 		if(weekend==1) {
 			if(cigars>=40) {
@@ -28,5 +32,10 @@ public class SquirrelCigars {
 			}
 		}
 		sc.close();
+		}
+		catch(Exception e) {
+			System.out.println("please give a valid input");
+		}
+		
 	}
 }
