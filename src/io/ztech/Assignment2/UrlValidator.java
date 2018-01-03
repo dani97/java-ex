@@ -5,15 +5,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UrlValidator {
-	public static  boolean validateUrl(String url) {
+	public static boolean validateUrl(String url) {
 		return url.matches("[a-zA-Z]+://(www.)?[a-zA-Z0-9]+[.][a-zA-Z]+$");
 	}
-	public static void main(String [] args) {
+
+	public static void main(String[] args) {
 		Logger logger = Logger.getLogger(UrlValidator.class.getName());
-		logger.log(Level.INFO,"enter url");
+		logger.log(Level.INFO, "enter url");
 		Scanner scanner = new Scanner(System.in);
 		String url = scanner.nextLine();
-		logger.log(Level.INFO,Boolean.toString(validateUrl(url)));
+		logger.log(Level.INFO, Boolean.toString(validateUrl(url)));
 		scanner.close();
 	}
 }
