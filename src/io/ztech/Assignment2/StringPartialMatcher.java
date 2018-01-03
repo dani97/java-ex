@@ -4,10 +4,13 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class StringSearch {
+public class StringPartialMatcher {
+
 	public static boolean checkString(String input, String[] stringArray) {
+		input = input.toLowerCase();
 		for (String looper : stringArray) {
-			if (looper.equals(input)) {
+			looper = looper.toLowerCase();
+			if (looper.equals(input) || looper.contains(input) || input.contains(looper)) {
 				return true;
 			}
 		}
@@ -16,7 +19,7 @@ public class StringSearch {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Logger logger = Logger.getLogger(StringSearch.class.getName());
+		Logger logger = Logger.getLogger(StringPartialMatcher.class.getName());
 		logger.log(Level.INFO, "enter number of strings");
 		int numStrings = scanner.nextInt();
 		scanner.nextLine();
