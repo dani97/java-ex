@@ -6,11 +6,11 @@ import java.util.logging.Logger;
 
 public class UrlValidator {
 	public static boolean validateUrl(String url) {
-		return url.matches("[a-zA-Z]+://(www.)?[a-zA-Z0-9]+[.][a-zA-Z]+$");
+		return url.matches("^[a-zA-Z]+://(www.)?[a-zA-Z0-9]+[.][a-zA-Z]{2,3}$");
 	}
-	
+
 	public static String replaceHtmlTags(String html) {
-		return html.replaceAll("<[a-zA-Z -//]+>", "");
+		return html.replaceAll("<[a-zA-Z -=//]+>", "");
 	}
 
 	public static void main(String[] args) {
